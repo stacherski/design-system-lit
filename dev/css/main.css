@@ -1,0 +1,49 @@
+/* ── Reset ──────────────────────────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  font-size: 100%; /* 1rem = 16px */
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  tab-size: 2;
+}
+
+body {
+  font-family: var(--as-font-regular, system-ui, sans-serif);
+  font-size: var(--as-font-size-base);
+  line-height: var(--as-line-height);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 { font-size: var(--as-font-size-display); line-height: var(--as-line-height-tight); }
+h2 { font-size: var(--as-font-size-xxxl);   line-height: var(--as-line-height-heading); }
+h3 { font-size: var(--as-font-size-xxl);    line-height: var(--as-line-height-heading); }
+h4 { font-size: var(--as-font-size-xl);     line-height: var(--as-line-height-caption); }
+h5 { font-size: var(--as-font-size-l);      line-height: var(--as-line-height-caption); }
+h6 { font-size: var(--as-font-size-m);      line-height: var(--as-line-height); }
+
+small { font-size: var(--as-font-size-s); }
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  color: inherit;
+}

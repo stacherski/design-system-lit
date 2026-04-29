@@ -6,17 +6,63 @@
     <title>&lt;my-element> Demo</title>
     <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <script src="../node_modules/lit/polyfill-support.js"></script>
-    <script type="module" src="../my-element.js"></script>
-    <style>
-      p {
-        border: solid 1px blue;
-        padding: 8px;
-      }
-    </style>
+    <script type="module" src="../dist/as-icon.js"></script>
+    <script type="module" src="../dist/as-button.js"></script>
+    <link href="css/tokens.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/icons.css" rel="stylesheet">
   </head>
   <body>
-    <my-element>
-      <p>This is child content</p>
-    </my-element>
+    <as-icon image name="shutter" color="red" flip-y flip-x size="xxl" rotate="0deg" label="Open me"></as-icon>
+
+    <hr>
+
+    <as-button>Plain button</as-button>
+    <as-button variant="outlined">Outlined button</as-button>
+    <as-button variant="transparent">Transparent button</as-button>
+
+    <br><br>
+
+    <as-button accent="#e53935">Red accent</as-button>
+    <as-button accent="#e53935" variant="outlined">Red outlined</as-button>
+    <as-button accent="#e53935" variant="transparent">Red transparent</as-button>
+
+    <br><br>
+
+    <as-button href="https://example.com" target="_blank">Link button</as-button>
+    <as-button href="https://example.com" variant="outlined">Outlined link</as-button>
+
+    <br><br>
+
+    <as-button disabled>Disabled</as-button>
+    <as-button variant="outlined" disabled>Disabled outlined</as-button>
+
+    <br><br>
+
+    <!-- Icon left -->
+    <as-button><as-icon name="calendar"></as-icon>Schedule</as-button>
+    <as-button variant="outlined"><as-icon name="calendar"></as-icon>Schedule</as-button>
+    <as-button variant="transparent"><as-icon name="calendar"></as-icon>Schedule</as-button>
+
+    <br><br>
+
+    <!-- Icon right -->
+    <as-button>Continue<as-icon name="arrow-right"></as-icon></as-button>
+    <as-button variant="outlined">Continue<as-icon name="arrow-right"></as-icon></as-button>
+    <as-button variant="transparent">Continue<as-icon name="arrow-right"></as-icon></as-button>
+
+    <br><br>
+
+    <!-- Icon only (no text) -->
+    <as-button><as-icon name="bars" label="Menu"></as-icon></as-button>
+    <as-button variant="outlined"><as-icon name="bars" label="Menu"></as-icon></as-button>
+    <as-button variant="transparent"><as-icon name="bars" label="Menu"></as-icon></as-button>
+
+    <br><br>
+
+    <!-- Icon + accent color -->
+    <as-button accent="#e53935"><as-icon name="checkmark"></as-icon>Confirm</as-button>
+    <as-button accent="#e53935" variant="outlined"><as-icon name="checkmark"></as-icon>Confirm</as-button>
+    <as-button accent="#e53935" variant="transparent"><as-icon name="checkmark"></as-icon>Confirm</as-button>
   </body>
 </html>
