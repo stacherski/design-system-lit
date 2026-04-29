@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-type ButtonVariant = 'plain' | 'outlined' | 'transparent';
+export type ButtonVariant = 'plain' | 'outlined' | 'transparent';
 
 /**
  * `as-button` — Button / link component for the AS Design System.
@@ -126,7 +126,7 @@ export class AsButton extends LitElement {
           href=${this.href}
           target=${this.target || ''}
           part="button"
-          ?aria-disabled=${this.disabled}
+          aria-disabled=${this.disabled ? 'true' : 'false'}
         ><slot></slot></a>
       `;
     }

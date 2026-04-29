@@ -45,7 +45,7 @@ let AsButton = class AsButton extends LitElement {
           href=${this.href}
           target=${this.target || ''}
           part="button"
-          ?aria-disabled=${this.disabled}
+          aria-disabled=${this.disabled ? 'true' : 'false'}
         ><slot></slot></a>
       `;
         }

@@ -1,5 +1,5 @@
 import { LitElement } from 'lit';
-type ButtonVariant = 'plain' | 'outlined' | 'transparent';
+export type ButtonVariant = 'plain' | 'outlined' | 'transparent';
 /**
  * `as-button` — Button / link component for the AS Design System.
  *
@@ -28,5 +28,4 @@ declare global {
         'as-button': AsButton;
     }
 }
-export {};
 //# sourceMappingURL=as-button.d.ts.map

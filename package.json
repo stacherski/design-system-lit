@@ -7,8 +7,8 @@
   "module": "my-element.js",
   "type": "module",
   "scripts": {
-    "build": "tsc",
-    "build:watch": "tsc --watch",
+    "build": "npm run analyze && node scripts/gen-react-types.mjs && tsc",
+    "build:watch": "npm run analyze && node scripts/gen-react-types.mjs && tsc --watch",
     "clean": "rimraf dist",
     "lint": "npm run lint:lit-analyzer && npm run lint:eslint",
     "lint:eslint": "eslint 'src/**/*.ts'",

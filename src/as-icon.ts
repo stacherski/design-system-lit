@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 
-type IconSize = 'xs' | 's' | 'm' | 'default' | 'l' | 'xl' | 'xxl' | 'xxxl';
+export type IconSize = 'xs' | 's' | 'm' | 'default' | 'l' | 'xl' | 'xxl' | 'xxxl';
 
 /**
  * `as-icon` — Icon component for the AS Design System.

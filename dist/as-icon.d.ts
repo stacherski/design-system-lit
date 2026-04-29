@@ -1,5 +1,5 @@
 import { LitElement } from 'lit';
-type IconSize = 'xs' | 's' | 'm' | 'default' | 'l' | 'xl' | 'xxl' | 'xxxl';
+export type IconSize = 'xs' | 's' | 'm' | 'default' | 'l' | 'xl' | 'xxl' | 'xxxl';
 /**
  * `as-icon` — Icon component for the AS Design System.
  *
@@ -49,5 +49,4 @@ declare global {
         'as-icon': AsIcon;
     }
 }
-export {};
 //# sourceMappingURL=as-icon.d.ts.map
