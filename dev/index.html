@@ -1,68 +1,83 @@
 <!doctype html>
 
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>&lt;my-element> Demo</title>
-    <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-    <script src="../node_modules/lit/polyfill-support.js"></script>
-    <script type="module" src="../dist/as-icon.js"></script>
-    <script type="module" src="../dist/as-button.js"></script>
-    <link href="css/tokens.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-    <link href="css/icons.css" rel="stylesheet">
-  </head>
-  <body>
-    <as-icon image name="shutter" color="red" flip-y flip-x size="xxl" rotate="0deg" label="Open me"></as-icon>
 
-    <hr>
+<head>
+  <meta charset="utf-8" />
+  <title>&lt;my-element> Demo</title>
+  <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <script src="../node_modules/lit/polyfill-support.js"></script>
+  <script type="module" src="../dist/as-icon.js"></script>
+  <script type="module" src="../dist/as-button.js"></script>
+  <script type="module" src="../dist/as-avatar.js"></script>
+  <link href="css/tokens.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <link href="css/icons.css" rel="stylesheet">
+</head>
 
-    <as-button>Plain button</as-button>
-    <as-button variant="outlined">Outlined button</as-button>
-    <as-button variant="transparent">Transparent button</as-button>
+<body>
+  <as-icon image name="shutter" color="red" flip-y flip-x size="xxl" rotate="0deg" label="Open me"></as-icon>
 
-    <br><br>
+  <hr>
 
-    <as-button accent="#e53935">Red accent</as-button>
-    <as-button accent="#e53935" variant="outlined">Red outlined</as-button>
-    <as-button accent="#e53935" variant="transparent">Red transparent</as-button>
+  <as-button>Plain button</as-button>
+  <as-button variant="outlined">Outlined button</as-button>
+  <as-button variant="transparent">Transparent button</as-button>
 
-    <br><br>
+  <br><br>
 
-    <as-button href="https://example.com" target="_blank">Link button</as-button>
-    <as-button href="https://example.com" variant="outlined">Outlined link</as-button>
+  <as-button accent="#e53935">Red accent</as-button>
+  <as-button accent="#e53935" variant="outlined">Red outlined</as-button>
+  <as-button accent="#e53935" variant="transparent">Red transparent</as-button>
 
-    <br><br>
+  <br><br>
 
-    <as-button disabled>Disabled</as-button>
-    <as-button variant="outlined" disabled>Disabled outlined</as-button>
+  <as-button href="https://example.com" target="_blank">Link button</as-button>
+  <as-button href="https://example.com" variant="outlined">Outlined link</as-button>
 
-    <br><br>
+  <br><br>
 
-    <!-- Icon left -->
-    <as-button><as-icon name="calendar"></as-icon>Schedule</as-button>
-    <as-button variant="outlined"><as-icon name="calendar"></as-icon>Schedule</as-button>
-    <as-button variant="transparent"><as-icon name="calendar"></as-icon>Schedule</as-button>
+  <as-button disabled>Disabled</as-button>
+  <as-button variant="outlined" disabled>Disabled outlined</as-button>
 
-    <br><br>
+  <br><br>
 
-    <!-- Icon right -->
-    <as-button>Continue<as-icon name="arrow-right"></as-icon></as-button>
-    <as-button variant="outlined">Continue<as-icon name="arrow-right"></as-icon></as-button>
-    <as-button variant="transparent">Continue<as-icon name="arrow-right"></as-icon></as-button>
+  <!-- Icon left -->
+  <as-button><as-icon name="calendar" color="inherit"></as-icon>Schedule</as-button>
+  <as-button variant="outlined"><as-icon name="calendar" color="inherit"></as-icon>Schedule</as-button>
+  <as-button variant="transparent"><as-icon name="calendar" color="inherit"></as-icon>Schedule</as-button>
 
-    <br><br>
+  <br><br>
 
-    <!-- Icon only (no text) -->
-    <as-button><as-icon name="bars" label="Menu"></as-icon></as-button>
-    <as-button variant="outlined"><as-icon name="bars" label="Menu"></as-icon></as-button>
-    <as-button variant="transparent"><as-icon name="bars" label="Menu"></as-icon></as-button>
+  <!-- Icon right -->
+  <as-button>Continue<as-icon name="arrow-right" color="inherit"></as-icon></as-button>
+  <as-button variant="outlined">Continue<as-icon name="arrow-right" color="inherit"></as-icon></as-button>
+  <as-button variant="transparent">Continue<as-icon name="arrow-right" color="inherit"></as-icon></as-button>
 
-    <br><br>
+  <br><br>
 
-    <!-- Icon + accent color -->
-    <as-button accent="#e53935"><as-icon name="checkmark"></as-icon>Confirm</as-button>
-    <as-button accent="#e53935" variant="outlined"><as-icon name="checkmark"></as-icon>Confirm</as-button>
-    <as-button accent="#e53935" variant="transparent"><as-icon name="checkmark"></as-icon>Confirm</as-button>
-  </body>
+  <!-- Icon only (no text) -->
+  <as-button><as-icon name="bars" label="Menu" color="inherit"></as-icon></as-button>
+  <as-button variant="outlined"><as-icon name="bars" label="Menu" color="inherit"></as-icon></as-button>
+  <as-button variant="transparent"><as-icon name="bars" label="Menu" color="inherit"></as-icon></as-button>
+
+  <br><br>
+
+  <!-- Icon + accent color -->
+  <as-button accent="#e53935"><as-icon name="checkmark" color="inherit"></as-icon>Confirm</as-button>
+  <as-button accent="#e53935" variant="outlined"><as-icon name="checkmark" color="inherit"></as-icon>Confirm</as-button>
+  <as-button accent="#e53935" variant="transparent"><as-icon name="checkmark"
+      color="inherit"></as-icon>Confirm</as-button>
+
+  <hr>
+
+  <as-avatar>AS</as-avatar>
+  <as-avatar style="--avatar-accent: var(--as-color-status-warning);" size='s'></as-avatar>
+  <as-avatar size='m'></as-avatar>
+  <as-avatar size='l' icon="pen"></as-avatar>
+  <as-avatar size='xl' name="Chuck Norris"></as-avatar>
+  <as-avatar name="Andrzej Stacherski" size='xxl' src="https://media.licdn.com/dms/image/v2/D4D35AQG9BSyUJCUJTA/profile-framedphoto-shrink_100_100/B4DZ0vGlQqIoAk-/0/1774611748304?e=1778151600&v=beta&t=5K-PIdpIeC59LulbUJ5y78YkEuuOtNS-lac8d-2yyTQ"></as-avatar>
+  <as-avatar variant="square" size='xxl'>IN</as-avatar>
+</body>
+
 </html>
