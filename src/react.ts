@@ -2,6 +2,7 @@
 // Run `npm run build` to update after adding or changing components.
 
 export {};
+import type { AvatarVariant, AvatarSize } from './as-avatar.js';
 import type { ButtonVariant } from './as-button.js';
 import type { IconSize } from './as-icon.js';
 
@@ -27,6 +28,18 @@ type HTMLProps = {
 declare global {
   namespace JSX {
     interface IntrinsicElements {
+      'as-avatar': HTMLProps & {
+        'variant'?: AvatarVariant;
+        'size'?: AvatarSize;
+        'src'?: string;
+        'name'?: string;
+        'icon'?: string;
+        'accent'?: string;
+      };
+      'as-button-group': HTMLProps & {
+        'vertical'?: boolean;
+        'spaced'?: boolean;
+      };
       'as-button': HTMLProps & {
         'href'?: string;
         'target'?: string;

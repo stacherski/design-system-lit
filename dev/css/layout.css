@@ -1,0 +1,154 @@
+/* ── Page layout ─────────────────────────────────────────────────────────── */
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+[layout] {
+  display: grid;
+  grid-template-columns: var(--as-space-sidebar, 19rem) 1fr;
+  min-height: 100vh;
+}
+
+/* ── Sidebar / nav ───────────────────────────────────────────────────────── */
+
+[layout] > nav {
+  background: var(--as-color-background-nav, #C0DCDE);
+  border-right: 1px solid var(--as-color-background-nav-strong, #a8c8ca);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  padding: var(--as-space-m, 1rem) var(--as-space-l, 1.5rem);
+  background: var(--as-color-accent, #1e3969);
+  color: #fff;
+  font-family: var(--as-font-bold, system-ui, sans-serif);
+  font-size: var(--as-font-size-l, 1.1rem);
+  min-height: 3.5rem;
+  flex-shrink: 0;
+}
+
+[layout] > nav > ul {
+  list-style: none;
+  padding: var(--as-space-s, 0.5rem) 0;
+  margin: 0;
+  flex: 1;
+}
+
+[layout] > nav li {
+  list-style: none;
+}
+
+.l1 .wrapper > a,
+.l2 .wrapper > a {
+  display: flex;
+  align-items: center;
+  gap: var(--as-space-s, 0.5rem);
+  text-decoration: none;
+  transition: background var(--as-time-xs, 0.125s) ease;
+}
+
+.l1.wrapper {
+  padding: 0;
+}
+
+.l1.wrapper > a {
+  padding: var(--as-space-s, 0.5rem) var(--as-space-l, 1.5rem);
+  color: var(--as-color-text-nav-active, #153B50);
+  font-family: var(--as-font-bold, system-ui, sans-serif);
+  font-size: var(--as-font-size-m, 1rem);
+}
+
+.l1.wrapper > a:hover {
+  background: var(--as-color-background-nav-strong, #a8c8ca);
+}
+
+.l2.wrapper > a {
+  padding: var(--as-space-xs, 0.25rem) var(--as-space-l, 1.5rem) var(--as-space-xs, 0.25rem) calc(var(--as-space-l, 1.5rem) + 1.5rem);
+  color: var(--as-color-text-nav, #429EA6);
+  font-size: var(--as-font-size-s, 0.8rem);
+}
+
+.l2.wrapper > a:hover {
+  background: var(--as-color-background-nav-strong, #a8c8ca);
+  color: var(--as-color-text-nav-active, #153B50);
+}
+
+li[level="2"].active .l2.wrapper > a {
+  color: var(--as-color-text-nav-active, #153B50);
+  font-family: var(--as-font-bold, system-ui, sans-serif);
+}
+
+/* ── Main content ────────────────────────────────────────────────────────── */
+
+[layout] > section[content] {
+  background: var(--as-color-background, #f7f7f7);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+section[content] > header {
+  background: var(--as-color-accent, #1e3969);
+  color: #fff;
+  padding: var(--as-space-xl, 2.25rem) var(--as-space-xxl, 3.5rem);
+}
+
+section[content] > header h1 {
+  margin: 0;
+  font-family: var(--as-font-bold, system-ui, sans-serif);
+  font-weight: normal;
+}
+
+section[content] > article {
+  padding: var(--as-space-xl, 2.25rem) var(--as-space-xxl, 3.5rem);
+  max-width: 56rem;
+}
+
+section[content] > article > p {
+  color: var(--as-color-text-neutral);
+  margin-bottom: var(--as-space-xl, 2.25rem);
+}
+
+/* ── Component sections ──────────────────────────────────────────────────── */
+
+.component-section {
+  margin-bottom: var(--as-space-xxl, 3.5rem);
+}
+
+.component-section h2 {
+  color: var(--as-color-text, #153b50);
+  margin: 0 0 var(--as-space-m, 1rem);
+  padding-bottom: var(--as-space-s, 0.5rem);
+  border-bottom: 2px solid var(--as-color-background-nav, #C0DCDE);
+  font-family: var(--as-font-bold, system-ui, sans-serif);
+  font-weight: normal;
+}
+
+.component-section h3 {
+  color: var(--as-color-text-neutral);
+  margin: var(--as-space-l, 1.5rem) 0 var(--as-space-xs, 0.25rem);
+  font-size: var(--as-font-size-s, 0.8rem);
+  font-family: var(--as-font-bold, system-ui, sans-serif);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.example-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--as-space-s, 0.5rem);
+  padding: var(--as-space-m, 1rem);
+  background: var(--as-color-background-panel, #fff);
+  border: 1px solid var(--as-color-border-panel, #E2E4ED);
+  border-radius: var(--as-border-radius-m, 0.5rem);
+}

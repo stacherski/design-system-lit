@@ -15,7 +15,7 @@ export type IconSize = 'xs' | 's' | 'm' | 'default' | 'l' | 'xl' | 'xxl' | 'xxxl
  * are preserved.
  *
  * @attr {string}   name   - Icon name (e.g. "pen") or full CSS var ("--as-icon-pen"). Required.
- * @attr {IconSize} size   - xs | s | m | default | l | xl | xxl | xxxl. Defaults to "m".
+ * @attr {IconSize} size   - s | m | l | xl | xxl | xxxl. Defaults to "m".
  * @attr {string}   color  - Any CSS color, hex, or CSS var. Defaults to var(--as-color-text).
  * @attr {string}   label  - Accessible label. Absent → icon hidden from assistive technology.
  * @attr {boolean}  flip-x - Flips icon horizontally.

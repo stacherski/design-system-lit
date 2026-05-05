@@ -74,7 +74,11 @@ AsButton.styles = css `
       font-weight: 500;
       line-height: 1.25;
       cursor: pointer;
-      border-radius: var(--as-radius, 0.25rem);
+      border-radius:
+        var(--as-btn-radius-tl, var(--as-radius, 0.25rem))
+        var(--as-btn-radius-tr, var(--as-radius, 0.25rem))
+        var(--as-btn-radius-br, var(--as-radius, 0.25rem))
+        var(--as-btn-radius-bl, var(--as-radius, 0.25rem));
       text-decoration: none;
       transition: opacity 0.15s ease-out, box-shadow 0.15s ease-out;
       box-sizing: border-box;
@@ -85,6 +89,9 @@ AsButton.styles = css `
       background-color: var(--_accent);
       color: var(--as-color-on-accent, #fff);
       border: 2px solid var(--_accent);
+      border-right-width: var(--as-btn-border-right-width, 2px);
+      border-bottom-width: var(--as-btn-border-bottom-width, 2px);
+      width: var(--as-btn-width, auto);
     }
 
     .btn:hover:not([disabled]) {
@@ -108,6 +115,8 @@ AsButton.styles = css `
       background-color: transparent;
       color: var(--_accent);
       border: 2px solid var(--_accent);
+      border-right-width: var(--as-btn-border-right-width, 2px);
+      border-bottom-width: var(--as-btn-border-bottom-width, 2px);
     }
 
     :host([variant='outlined']) .btn:hover:not([disabled]) {
@@ -120,6 +129,8 @@ AsButton.styles = css `
       background-color: transparent;
       color: var(--_accent);
       border: 2px solid transparent;
+      border-right-width: var(--as-btn-border-right-width, 2px);
+      border-bottom-width: var(--as-btn-border-bottom-width, 2px);
     }
 
     :host([variant='transparent']) .btn:hover:not([disabled]) {

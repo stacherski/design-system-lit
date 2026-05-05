@@ -1,83 +1,348 @@
 <!doctype html>
-
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8" />
-  <title>&lt;my-element> Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AS Design System (Lit) — Dev</title>
   <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
   <script src="../node_modules/lit/polyfill-support.js"></script>
   <script type="module" src="../dist/as-icon.js"></script>
   <script type="module" src="../dist/as-button.js"></script>
+  <script type="module" src="../dist/as-button-group.js"></script>
   <script type="module" src="../dist/as-avatar.js"></script>
   <link href="css/tokens.css" rel="stylesheet">
   <link href="css/main.css" rel="stylesheet">
   <link href="css/icons.css" rel="stylesheet">
+  <link href="css/layout.css" rel="stylesheet">
 </head>
 
 <body>
-  <as-icon image name="shutter" color="red" flip-y flip-x size="xxl" rotate="0deg" label="Open me"></as-icon>
+  <div layout>
 
-  <hr>
+    <nav>
+      <div class="nav-brand">AS Design System</div>
+      <ul>
+        <li level="1">
+          <div class="l1 wrapper">
+            <a href="#components">
+              <as-icon name="sliders" size="default" color="inherit"></as-icon>
+              <span>Components</span>
+            </a>
+          </div>
+          <div>
+            <ul>
+              <li level="2">
+                <div class="l2 wrapper">
+                  <a href="#icon">
+                    <as-icon name="arrow-right" size="s" color="inherit"></as-icon>
+                    <span>Icon</span>
+                  </a>
+                </div>
+              </li>
+              <li level="2">
+                <div class="l2 wrapper">
+                  <a href="#button">
+                    <as-icon name="arrow-right" size="s" color="inherit"></as-icon>
+                    <span>Button</span>
+                  </a>
+                </div>
+              </li>
+              <li level="2">
+                <div class="l2 wrapper">
+                  <a href="#button-group">
+                    <as-icon name="arrow-right" size="s" color="inherit"></as-icon>
+                    <span>Button Group</span>
+                  </a>
+                </div>
+              </li>
+              <li level="2">
+                <div class="l2 wrapper">
+                  <a href="#avatar">
+                    <as-icon name="arrow-right" size="s" color="inherit"></as-icon>
+                    <span>Avatar</span>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
 
-  <as-button>Plain button</as-button>
-  <as-button variant="outlined">Outlined button</as-button>
-  <as-button variant="transparent">Transparent button</as-button>
+    <section content>
+      <header>
+        <h1>AS Design System</h1>
+      </header>
+      <article>
+        <p>A Lit-based library of framework-agnostic web components.</p>
 
-  <br><br>
+        <!-- ── Icon ──────────────────────────────────────────────────────────── -->
+        <section id="icon" class="component-section">
+          <h2>&lt;as-icon&gt;</h2>
 
-  <as-button accent="#e53935">Red accent</as-button>
-  <as-button accent="#e53935" variant="outlined">Red outlined</as-button>
-  <as-button accent="#e53935" variant="transparent">Red transparent</as-button>
+          <h3>Default (mask mode)</h3>
+          <div class="example-row">
+            <as-icon name="checkmark"></as-icon>
+            <as-icon name="calendar"></as-icon>
+            <as-icon name="arrow-right"></as-icon>
+            <as-icon name="bars"></as-icon>
+            <as-icon name="user"></as-icon>
+            <as-icon name="sliders"></as-icon>
+          </div>
 
-  <br><br>
+          <h3>Sizes</h3>
+          <div class="example-row">
+            <as-icon name="dot" size="xs"></as-icon>
+            <as-icon name="dot" size="s"></as-icon>
+            <as-icon name="dot" size="m"></as-icon>
+            <as-icon name="dot" size="default"></as-icon>
+            <as-icon name="dot" size="l"></as-icon>
+            <as-icon name="dot" size="xl"></as-icon>
+            <as-icon name="dot" size="xxl"></as-icon>
+          </div>
 
-  <as-button href="https://example.com" target="_blank">Link button</as-button>
-  <as-button href="https://example.com" variant="outlined">Outlined link</as-button>
+          <h3>Colors</h3>
+          <div class="example-row">
+            <as-icon name="checkmark" color="#1e3969" size="l"></as-icon>
+            <as-icon name="checkmark" color="#429EA6" size="l"></as-icon>
+            <as-icon name="checkmark" color="#e53935" size="l"></as-icon>
+            <as-icon name="checkmark" color="#F56F16" size="l"></as-icon>
+            <as-icon name="checkmark" color="#008800" size="l"></as-icon>
+          </div>
 
-  <br><br>
+          <h3>Image mode (original colors)</h3>
+          <div class="example-row">
+            <as-icon image name="shutter" size="xl"></as-icon>
+            <as-icon image name="shutter" flip-x size="xl"></as-icon>
+            <as-icon image name="shutter" flip-y size="xl"></as-icon>
+            <as-icon image name="shutter" rotate="90deg" size="xl"></as-icon>
+            <as-icon image name="shutter" rotate="180deg" size="xl"></as-icon>
+          </div>
+        </section>
 
-  <as-button disabled>Disabled</as-button>
-  <as-button variant="outlined" disabled>Disabled outlined</as-button>
+        <!-- ── Button ─────────────────────────────────────────────────────────── -->
+        <section id="button" class="component-section">
+          <h2>&lt;as-button&gt;</h2>
 
-  <br><br>
+          <h3>Variants</h3>
+          <div class="example-row">
+            <as-button>Plain</as-button>
+            <as-button variant="outlined">Outlined</as-button>
+            <as-button variant="transparent">Transparent</as-button>
+          </div>
 
-  <!-- Icon left -->
-  <as-button><as-icon name="calendar" color="inherit"></as-icon>Schedule</as-button>
-  <as-button variant="outlined"><as-icon name="calendar" color="inherit"></as-icon>Schedule</as-button>
-  <as-button variant="transparent"><as-icon name="calendar" color="inherit"></as-icon>Schedule</as-button>
+          <h3>Accent color</h3>
+          <div class="example-row">
+            <as-button accent="#e53935">Red plain</as-button>
+            <as-button accent="#e53935" variant="outlined">Red outlined</as-button>
+            <as-button accent="#e53935" variant="transparent">Red transparent</as-button>
+          </div>
 
-  <br><br>
+          <h3>As link</h3>
+          <div class="example-row">
+            <as-button href="https://example.com" target="_blank">Link button</as-button>
+            <as-button href="https://example.com" variant="outlined">Outlined link</as-button>
+            <as-button href="https://example.com" variant="transparent">Transparent link</as-button>
+          </div>
 
-  <!-- Icon right -->
-  <as-button>Continue<as-icon name="arrow-right" color="inherit"></as-icon></as-button>
-  <as-button variant="outlined">Continue<as-icon name="arrow-right" color="inherit"></as-icon></as-button>
-  <as-button variant="transparent">Continue<as-icon name="arrow-right" color="inherit"></as-icon></as-button>
+          <h3>Disabled</h3>
+          <div class="example-row">
+            <as-button disabled>Disabled</as-button>
+            <as-button variant="outlined" disabled>Disabled outlined</as-button>
+            <as-button variant="transparent" disabled>Disabled transparent</as-button>
+          </div>
 
-  <br><br>
+          <h3>With icon — left</h3>
+          <div class="example-row">
+            <as-button><as-icon name="calendar" color="inherit"></as-icon>Schedule</as-button>
+            <as-button variant="outlined"><as-icon name="calendar" color="inherit"></as-icon>Schedule</as-button>
+            <as-button variant="transparent"><as-icon name="calendar" color="inherit"></as-icon>Schedule</as-button>
+          </div>
 
-  <!-- Icon only (no text) -->
-  <as-button><as-icon name="bars" label="Menu" color="inherit"></as-icon></as-button>
-  <as-button variant="outlined"><as-icon name="bars" label="Menu" color="inherit"></as-icon></as-button>
-  <as-button variant="transparent"><as-icon name="bars" label="Menu" color="inherit"></as-icon></as-button>
+          <h3>With icon — right</h3>
+          <div class="example-row">
+            <as-button>Continue<as-icon name="arrow-right" color="inherit"></as-icon></as-button>
+            <as-button variant="outlined">Continue<as-icon name="arrow-right" color="inherit"></as-icon></as-button>
+            <as-button variant="transparent">Continue<as-icon name="arrow-right" color="inherit"></as-icon></as-button>
+          </div>
 
-  <br><br>
+          <h3>Icon only</h3>
+          <div class="example-row">
+            <as-button><as-icon name="bars" label="Menu" color="inherit"></as-icon></as-button>
+            <as-button variant="outlined"><as-icon name="bars" label="Menu" color="inherit"></as-icon></as-button>
+            <as-button variant="transparent"><as-icon name="bars" label="Menu" color="inherit"></as-icon></as-button>
+          </div>
 
-  <!-- Icon + accent color -->
-  <as-button accent="#e53935"><as-icon name="checkmark" color="inherit"></as-icon>Confirm</as-button>
-  <as-button accent="#e53935" variant="outlined"><as-icon name="checkmark" color="inherit"></as-icon>Confirm</as-button>
-  <as-button accent="#e53935" variant="transparent"><as-icon name="checkmark"
-      color="inherit"></as-icon>Confirm</as-button>
+          <h3>Icon + accent color</h3>
+          <div class="example-row">
+            <as-button accent="#e53935"><as-icon name="checkmark" color="inherit"></as-icon>Confirm</as-button>
+            <as-button accent="#e53935" variant="outlined"><as-icon name="checkmark" color="inherit"></as-icon>Confirm</as-button>
+            <as-button accent="#e53935" variant="transparent"><as-icon name="checkmark" color="inherit"></as-icon>Confirm</as-button>
+          </div>
+        </section>
 
-  <hr>
+        <!-- ── Button Group ───────────────────────────────────────────────────── -->
+        <section id="button-group" class="component-section">
+          <h2>&lt;as-button-group&gt;</h2>
 
-  <as-avatar>AS</as-avatar>
-  <as-avatar style="--avatar-accent: var(--as-color-status-warning);" size='s'></as-avatar>
-  <as-avatar size='m'></as-avatar>
-  <as-avatar size='l' icon="pen"></as-avatar>
-  <as-avatar size='xl' name="Chuck Norris"></as-avatar>
-  <as-avatar name="Andrzej Stacherski" size='xxl' src="https://media.licdn.com/dms/image/v2/D4D35AQG9BSyUJCUJTA/profile-framedphoto-shrink_100_100/B4DZ0vGlQqIoAk-/0/1774611748304?e=1778151600&v=beta&t=5K-PIdpIeC59LulbUJ5y78YkEuuOtNS-lac8d-2yyTQ"></as-avatar>
-  <as-avatar variant="square" size='xxl'>IN</as-avatar>
+          <h3>Horizontal (default) — plain</h3>
+          <div class="example-row">
+            <as-button-group>
+              <as-button>One</as-button>
+              <as-button>Two</as-button>
+              <as-button>Three</as-button>
+            </as-button-group>
+          </div>
+
+          <h3>Horizontal — outlined</h3>
+          <div class="example-row">
+            <as-button-group>
+              <as-button variant="outlined">One</as-button>
+              <as-button variant="outlined">Two</as-button>
+              <as-button variant="outlined">Three</as-button>
+            </as-button-group>
+          </div>
+
+          <h3>Horizontal — with icons</h3>
+          <div class="example-row">
+            <as-button-group>
+              <as-button variant="outlined"><as-icon name="bars" color="inherit"></as-icon></as-button>
+              <as-button variant="outlined"><as-icon name="calendar" color="inherit"></as-icon></as-button>
+              <as-button variant="outlined"><as-icon name="user" color="inherit"></as-icon></as-button>
+            </as-button-group>
+          </div>
+
+          <h3>Vertical</h3>
+          <div class="example-row">
+            <as-button-group vertical>
+              <as-button>Top</as-button>
+              <as-button>Middle</as-button>
+              <as-button>Bottom</as-button>
+            </as-button-group>
+            <as-button-group vertical>
+              <as-button variant="outlined">Top</as-button>
+              <as-button variant="outlined">Middle</as-button>
+              <as-button variant="outlined">Bottom</as-button>
+            </as-button-group>
+          </div>
+
+          <h3>Spaced — horizontal</h3>
+          <div class="example-row">
+            <as-button-group spaced>
+              <as-button>One</as-button>
+              <as-button>Two</as-button>
+              <as-button>Three</as-button>
+            </as-button-group>
+            <as-button-group spaced>
+              <as-button variant="outlined">One</as-button>
+              <as-button variant="outlined">Two</as-button>
+              <as-button variant="outlined">Three</as-button>
+            </as-button-group>
+          </div>
+
+          <h3>Spaced — vertical</h3>
+          <div class="example-row">
+            <as-button-group spaced vertical>
+              <as-button>Top</as-button>
+              <as-button>Middle</as-button>
+              <as-button>Bottom</as-button>
+            </as-button-group>
+          </div>
+
+          <h3>Single button</h3>
+          <div class="example-row">
+            <as-button-group>
+              <as-button>Solo</as-button>
+            </as-button-group>
+          </div>
+
+          <h3>With accent color</h3>
+          <div class="example-row">
+            <as-button-group>
+              <as-button accent="#e53935">Delete</as-button>
+              <as-button accent="#e53935" variant="outlined">Cancel</as-button>
+            </as-button-group>
+          </div>
+        </section>
+
+        <!-- ── Avatar ─────────────────────────────────────────────────────────── -->
+        <section id="avatar" class="component-section">
+          <h2>&lt;as-avatar&gt;</h2>
+
+          <h3>Initials / placeholder</h3>
+          <div class="example-row">
+            <as-avatar>AS</as-avatar>
+            <as-avatar></as-avatar>
+            <as-avatar variant="square" name="Idea North"></as-avatar>
+            <as-avatar variant="square" size="xxl"></as-avatar>
+          </div>
+
+          <h3>Sizes</h3>
+          <div class="example-row">
+            <as-avatar size="m"></as-avatar>
+            <as-avatar size="l"></as-avatar>
+            <as-avatar size="xl"></as-avatar>
+            <as-avatar size="xxl"></as-avatar>
+            <as-avatar size="xxxl"></as-avatar>
+          </div>
+
+          <h3>From name (auto initials)</h3>
+          <div class="example-row">
+            <as-avatar name="Chuck Norris" size="xl"></as-avatar>
+            <as-avatar name="Andrzej Stacherski" size="xl"></as-avatar>
+            <as-avatar name="Jane Doe" size="xl"></as-avatar>
+          </div>
+
+          <h3>With icon</h3>
+          <div class="example-row">
+            <as-avatar icon="pen" size="l"></as-avatar>
+            <as-avatar icon="user" size="l"></as-avatar>
+            <as-avatar icon="envelope-solid" size="l"></as-avatar>
+          </div>
+
+          <h3>Accent color</h3>
+          <div class="example-row">
+            <as-avatar style="--avatar-accent: var(--as-color-accent);" size="m"></as-avatar>
+            <as-avatar style="--avatar-accent: var(--as-color-status-warning);" size="l"></as-avatar>
+            <as-avatar style="--avatar-accent: var(--as-color-status-error);" size="xl"></as-avatar>
+            <as-avatar style="--avatar-accent: var(--as-color-status-success);" size="xxl"></as-avatar>
+          </div>
+
+          <h3>With photo</h3>
+          <div class="example-row">
+            <as-avatar
+              name="Andrzej Stacherski"
+              size="xxxl"
+              src="https://media.licdn.com/dms/image/v2/D4D03AQGUaPBh8C4gYQ/profile-displayphoto-scale_200_200/B4DZzhf_BlIMAY-/0/1773309788386?e=1779321600&v=beta&t=8n0Qf3xkCYh1krJ-00uI4M0CWMKgeQEmc2Yr9kKdHrQ"
+            ></as-avatar>
+            <as-avatar
+              name="Andrzej Stacherski"
+              size="xxl"
+              src="https://media.licdn.com/dms/image/v2/D4D03AQGUaPBh8C4gYQ/profile-displayphoto-scale_200_200/B4DZzhf_BlIMAY-/0/1773309788386?e=1779321600&v=beta&t=8n0Qf3xkCYh1krJ-00uI4M0CWMKgeQEmc2Yr9kKdHrQ"
+            ></as-avatar>
+            <as-avatar
+              name="Andrzej Stacherski"
+              size="xl"
+              src="https://media.licdn.com/dms/image/v2/D4D03AQGUaPBh8C4gYQ/profile-displayphoto-scale_200_200/B4DZzhf_BlIMAY-/0/1773309788386?e=1779321600&v=beta&t=8n0Qf3xkCYh1krJ-00uI4M0CWMKgeQEmc2Yr9kKdHrQ"
+            ></as-avatar>
+            <as-avatar
+              name="Andrzej Stacherski"
+              size="l"
+              src="https://media.licdn.com/dms/image/v2/D4D03AQGUaPBh8C4gYQ/profile-displayphoto-scale_200_200/B4DZzhf_BlIMAY-/0/1773309788386?e=1779321600&v=beta&t=8n0Qf3xkCYh1krJ-00uI4M0CWMKgeQEmc2Yr9kKdHrQ"
+            ></as-avatar>
+            <as-avatar
+              name="Andrzej Stacherski"
+              size="m"
+              src="https://media.licdn.com/dms/image/v2/D4D03AQGUaPBh8C4gYQ/profile-displayphoto-scale_200_200/B4DZzhf_BlIMAY-/0/1773309788386?e=1779321600&v=beta&t=8n0Qf3xkCYh1krJ-00uI4M0CWMKgeQEmc2Yr9kKdHrQ"
+            ></as-avatar>
+          </div>
+        </section>
+
+      </article>
+    </section>
+
+  </div>
 </body>
 
 </html>

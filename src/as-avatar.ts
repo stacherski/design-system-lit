@@ -15,7 +15,7 @@ export type AvatarSize = 'm' | 'l' | 'xl' | 'xxl' | 'xxxl';
  *   5. silhouette     — default radial-gradient placeholder (no attrs set)
  *
  * @attr {AvatarVariant} variant - circle | square. Defaults to "circle".
- * @attr {AvatarSize}    size    - m | l | xl | xxl | xxxl. Defaults to "m".
+ * @attr {AvatarSize}    size    - m | l | xl | xxl | xxxl. Defaults to "l".
  * @attr {string}        src     - URL of a photo to display.
  * @attr {string}        name    - Full name; used as <img> alt text and to generate initials.
  * @attr {string}        icon    - Icon identifier passed to <as-icon> as a fallback.
@@ -30,7 +30,7 @@ export class AsAvatar extends LitElement {
   variant: AvatarVariant = 'circle';
 
   @property({ type: String, reflect: true })
-  size: AvatarSize = 'm';
+  size: AvatarSize = 'l';
 
   @property({ type: String })
   src: string = '';
@@ -87,6 +87,17 @@ export class AsAvatar extends LitElement {
         radial-gradient(ellipse 65% 58% at 50% 107%, var(--avatar-silhouette) 99%, transparent 100%);
     }
 
+    .silhouette--building {
+      display: block;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      fill: var(--avatar-silhouette);
+      padding: 15%;
+      box-sizing: border-box;
+    }
+
     /* ── Variants ── */
     :host([variant='circle'])   { --border-radius: 50%; }
     :host([variant='square'])   { --border-radius: var(--as-radius-s, 4px); }
@@ -121,10 +132,14 @@ export class AsAvatar extends LitElement {
       return html`<img class="image" src=${this.src} alt=${this.name} />`;
     }
 
+    const silhouette = this.variant === 'square'
+      ? html`<svg class="silhouette--building" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" aria-hidden="true"><path d="M96 96C78.3 96 64 110.3 64 128L64 496C64 522.5 85.5 544 112 544L528 544C554.5 544 576 522.5 576 496L576 216.2C576 198 556.6 186.5 540.6 195.1L384 279.4L384 216.2C384 198 364.6 186.5 348.6 195.1L192 279.4L192 128C192 110.3 177.7 96 160 96L96 96z"/></svg>`
+      : html`<span class="silhouette"></span>`;
+
     const fallback = this._content                  ? nothing
       : this.name                                   ? this._initials
       : this.icon                                   ? html`<as-icon name=${this.icon} size=${this.size}></as-icon>`
-      :                                               html`<span class="silhouette"></span>`;
+      :                                               silhouette;
 
     return html`
       <slot @slotchange=${this._onSlotChange}></slot>

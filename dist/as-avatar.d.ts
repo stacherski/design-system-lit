@@ -12,7 +12,7 @@ export type AvatarSize = 'm' | 'l' | 'xl' | 'xxl' | 'xxxl';
  *   5. silhouette     — default radial-gradient placeholder (no attrs set)
  *
  * @attr {AvatarVariant} variant - circle | square. Defaults to "circle".
- * @attr {AvatarSize}    size    - m | l | xl | xxl | xxxl. Defaults to "m".
+ * @attr {AvatarSize}    size    - m | l | xl | xxl | xxxl. Defaults to "l".
  * @attr {string}        src     - URL of a photo to display.
  * @attr {string}        name    - Full name; used as <img> alt text and to generate initials.
  * @attr {string}        icon    - Icon identifier passed to <as-icon> as a fallback.
