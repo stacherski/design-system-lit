@@ -57,7 +57,7 @@ let AsAvatar = class AsAvatar extends LitElement {
             : html `<span class="silhouette"></span>`;
         const fallback = this._content ? nothing
             : this.name ? this._initials
-                : this.icon ? html `<as-icon name=${this.icon} size=${this.size}></as-icon>`
+                : this.icon ? html `<as-icon name=${this.icon} color="inherit" style="--width: 50%;"></as-icon>`
                     : silhouette;
         return html `
       <slot @slotchange=${this._onSlotChange}></slot>
